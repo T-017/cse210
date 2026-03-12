@@ -17,11 +17,12 @@ public class Journal
 
   public void SaveToFile(string file)
   {
-
+    
   }
 
   public void LoadFromFile(string file)
   {
-
+    
+    
   }
 }

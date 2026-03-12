@@ -17,6 +17,7 @@ class Program
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
+            Console.Write("Please select which prompt you would like: ");
             userInput = Console.ReadLine();
 
             if (userInput == "1")
