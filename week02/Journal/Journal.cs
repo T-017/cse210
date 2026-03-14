@@ -1,3 +1,4 @@
+using System.IO;
 public class Journal
 {
   public List<Entry> _entries = new List<Entry>();
@@ -34,7 +35,7 @@ public class Journal
   {
     _entries.Clear();
     string filename = "journal.txt";
-    string[] lines = System.IO.File.ReadAllLines(filename);
+    string[] lines = File.ReadAllLines(filename);
 
     foreach (string line in lines)
     {
@@ -46,8 +47,12 @@ public class Journal
         entry._promptText = parts[1];
         entry._entryText = parts[2];
         _entries.Add(entry);
-        entry.Display();
       }
+    }
+    if (!File.Exists(filename))
+    {
+      Console.WriteLine("File not found: " + filename);
+      return;
     }
   }
 }
