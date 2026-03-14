@@ -17,12 +17,37 @@ public class Journal
 
   public void SaveToFile(string file)
   {
-    
+    string filename = "journal.txt";
+
+    using (StreamWriter outputFile = new StreamWriter(filename))
+    {
+      foreach (Entry entry in _entries)
+      {
+        outputFile.WriteLine(entry._date);
+        outputFile.WriteLine(entry._promptText);
+        outputFile.WriteLine(entry._entryText);
+      }
+    }
   }
 
   public void LoadFromFile(string file)
   {
-    
-    
+    _entries.Clear();
+    string filename = "journal.txt";
+    string[] lines = System.IO.File.ReadAllLines(filename);
+
+    foreach (string line in lines)
+    {
+      string[] parts = line.Split('|');
+      if (parts.Length == 3)
+      {
+        Entry entry = new Entry();
+        entry._date = parts[0];
+        entry._promptText = parts[1];
+        entry._entryText = parts[2];
+        _entries.Add(entry);
+        entry.Display();
+      }
+    }
   }
 }
