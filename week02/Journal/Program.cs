@@ -1,5 +1,7 @@
 using System;
 
+// An additional if statement to the LoadFromFile method of the Journal class that will write out "File not found: " if the file entered cannot be located to load, which exceeds the requirements.
+
 class Program
 {
     static void Main(string[] args)
