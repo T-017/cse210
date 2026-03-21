@@ -5,47 +5,20 @@ class Program
     static void Main(string[] args)
     {
         Reference reference = new Reference("John", 3, 16);
-        List<Word> words = new List<Word>
-        {
-            new Word("For"),
-            new Word("God"),
-            new Word("so"),
-            new Word("loved"),
-            new Word("the"),
-            new Word("world"),
-            new Word("that"),
-            new Word("he"),
-            new Word("gave"),
-            new Word("his"),
-            new Word("one"),
-            new Word("and"),
-            new Word("only"),
-            new Word("Son,"),
-            new Word("that"),
-            new Word("whoever"),
-            new Word("believes"),
-            new Word("in"),
-            new Word("him"),
-            new Word("shall"),
-            new Word("not"),
-            new Word("perish"),
-            new Word("but"),
-            new Word("have"),
-            new Word("eternal"),
-            new Word("life.")
-        };
 
-        Scripture scripture = new Scripture(reference.GetDisplayText(), words);
+        Scripture scripture = new Scripture(reference, "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.");
 
         while (!scripture.IsCompletelyHidden())
         {
             Console.Clear();
-            Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine(scripture.GetDisplayText(string.Empty));
             scripture.HideRandomWords(3);
-            Console.WriteLine("\nPress Enter to hide more words...");
-            Console.ReadLine();
+            Console.WriteLine("Press enter to continue or type quit to exit.");
+            string input = Console.ReadLine();
+            if (input.ToLower() == "quit")
+            {
+                break;
+            }
         }
-
-        Console.WriteLine("\nCongratulations! You've memorized the scripture!");
     }
 }

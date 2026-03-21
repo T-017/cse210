@@ -13,6 +13,10 @@ public class Word
 
   public void Hide()
   {
+    for (int i = 0; i < _text.Length; i++)
+    {
+      _text = _text.Replace(_text[i], '_');
+    }
     _isHidden = true;
   }
 
@@ -23,11 +27,18 @@ public class Word
 
   public bool IsHidden()
   {
-    return _isHidden;
+    if (_isHidden)
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
   }
 
   public string GetDisplayText()
   {
-    return _isHidden ? "____" : _text;
+    return _text;
   }
 }
