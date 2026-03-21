@@ -15,6 +15,11 @@ class Program
             scripture.HideRandomWords(3);
             Console.WriteLine("Press enter to continue or type quit to exit.");
             string input = Console.ReadLine();
+            while (input.ToLower() != "quit" && input != "")
+            {
+                Console.WriteLine("Invalid input. Press enter to continue or type quit to exit.");
+                input = Console.ReadLine();
+            }
             if (input.ToLower() == "quit")
             {
                 break;
