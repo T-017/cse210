@@ -9,6 +9,7 @@ public class Scripture
   {
     _reference = reference;
     string[] wordArray = text.Split(' ');
+    _words = new List<Word>();
     for (int i = 0; i < wordArray.Length; i++)
     {
       _words.Add(new Word(wordArray[i]));
@@ -18,7 +19,7 @@ public class Scripture
   public void HideRandomWords(int numberToHide)
   {
     Random random = new Random();
-    int hiddenCount = 2;
+    int hiddenCount = 0;
     while (hiddenCount < numberToHide)
     {
       int index = random.Next(_words.Count);
