@@ -1,5 +1,7 @@
 using System;
 
+// Went beyond the requirments of the assignment by adding input validation to unsure the user only enters "quit" or presses enter to continue.
+
 class Program
 {
     static void Main(string[] args)
@@ -29,7 +31,7 @@ class Program
             {
                 Console.Clear();
                 Console.WriteLine(scripture.GetDisplayText());
-                Console.WriteLine("Congratulations! You have memorized the scripture.");
+                Console.WriteLine("You have memorized the scripture.");
                 break;
             }
         }
