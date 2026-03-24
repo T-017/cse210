@@ -30,7 +30,7 @@ public class Scripture
       }
     }
   }
-    public string GetDisplayText(string text)
+    public string GetDisplayText()
   {
     string displayText = " ";
     for (int i = 0; i < _words.Count; i++)    {
