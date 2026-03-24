@@ -1,6 +1,6 @@
 using System;
 
-// Went beyond the requirments of the assignment by adding input validation to unsure the user only enters "quit" or presses enter to continue.
+// Went beyond the requirements of the assignment by adding input validation to ensure the user only enters "quit" or presses enter to continue.
 
 class Program
 {
