@@ -8,20 +8,28 @@ class Program
 
         Scripture scripture = new Scripture(reference, "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.");
 
-        while (!scripture.IsCompletelyHidden())
+        bool start = true;
+        while (start)
         {
             Console.Clear();
             Console.WriteLine(scripture.GetDisplayText());
             scripture.HideRandomWords(3);
             Console.WriteLine("Press enter to continue or type quit to exit.");
             string input = Console.ReadLine();
-            if (input.ToLower() != "quit" && input != "")
+            while (input.ToLower() != "quit" && input != "")
             {
                 Console.WriteLine("Invalid input. Press enter to continue or type quit to exit.");
                 input = Console.ReadLine();
             }
-            else if (input.ToLower() == "quit")
+            if (input.ToLower() == "quit")
             {
+                break;
+            }
+            else if (scripture.IsCompletelyHidden())
+            {
+                Console.Clear();
+                Console.WriteLine(scripture.GetDisplayText());
+                Console.WriteLine("Congratulations! You have memorized the scripture.");
                 break;
             }
         }

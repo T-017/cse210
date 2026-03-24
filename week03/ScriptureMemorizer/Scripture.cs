@@ -23,7 +23,7 @@ public class Scripture
     while (hiddenCount < numberToHide)
     {
       int index = random.Next(_words.Count);
-      if (!_words[index].IsHidden())
+      if (_words[index].IsHidden())
       {
         _words[index].Hide();
         hiddenCount++;
@@ -43,7 +43,7 @@ public class Scripture
   {
     foreach (Word word in _words)
     {
-      if (!word.IsHidden())
+      if (word.IsHidden())
       {
         return false;
       }
