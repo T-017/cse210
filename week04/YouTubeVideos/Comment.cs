@@ -2,16 +2,16 @@ using System;
 
 public class Comment
 {
-  public string CommenterName { get; set; }
-  public string CommentText { get; set; }
-  public int CommentLength
-  {
-    get { return CommentText.Length; }
-  }
+  public string _commenterName;
+  public string _commentText;
 
   public Comment(string commenterName, string commentText)
   {
-    CommenterName = commenterName;
-    CommentText = commentText;
+    _commenterName = commenterName;
+    _commentText = commentText;
+  }
+  public void DisplayComment()
+  {
+    Console.WriteLine($"{_commenterName}: {_commentText}");
   }
 }

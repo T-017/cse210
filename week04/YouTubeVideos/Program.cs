@@ -1,57 +1,46 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Create a video
-        Video video1 = new Video("C# Tutorial", "VS Code Assistant", 600);
+        List<Video> videos = new List<Video>();
 
-        // Create comments for the video
-        Comment comment1 = new Comment("Holt", "You have been a great help, thank you.");
-        Comment comment2 = new Comment("Toshio", "I have been struggling with C#, but the VS Code Assistant has made it much easier to understand.");
+        Video video1 = new Video(300, "How to Code in C#", "John Doe");
+        video1._comments.Add(new Comment("Alice", "Great tutorial!"));
+        video1._comments.Add(new Comment("Bob", "Very helpful, thanks!"));
+        video1._comments.Add(new Comment("Charlie", "I learned a lot from this video."));
 
-        // Display video information
-        Console.WriteLine($"Title: {video1.Title}");
-        Console.WriteLine($"Author: {video1.Author}");
-        Console.WriteLine($"Length: {video1.LengthInSeconds} seconds");
+        videos.Add(video1);
 
-        // Display comments
-        Console.WriteLine("\nComments:");
-        Console.WriteLine($"{comment1.CommenterName}: {comment1.CommentText} (Length: {comment1.CommentLength} characters)");
-        Console.WriteLine($"{comment2.CommenterName}: {comment2.CommentText} (Length: {comment2.CommentLength} characters)");
+        foreach (var video in videos)
+        {
+            video.DisplayVideoInfo();
+        }
 
-        // Create a video
-        Video video2 = new Video("C# Advanced Tutorial", "VS Code Assistant", 900);
+        Video video2 = new Video(300, "How to Code in C#", "John Doe");
+        video2._comments.Add(new Comment("Alice", "Great tutorial!"));
+        video2._comments.Add(new Comment("Bob", "Very helpful, thanks!"));
+        video2._comments.Add(new Comment("Charlie", "I learned a lot from this video."));
 
-        // Create comments for the video
-        Comment comment3 = new Comment("Holt", "This advanced tutorial was very helpful.");
-        Comment comment4 = new Comment("Toshio", "I learned a lot from this advanced tutorial.");
-        // Display video information
-        Console.WriteLine($"Title: {video2.Title}");
-        Console.WriteLine($"Author: {video2.Author}");
-        Console.WriteLine($"Length: {video2.LengthInSeconds} seconds");
+        videos.Add(video2);
 
-        // Display comments
-        Console.WriteLine("\nComments:");
-        Console.WriteLine($"{comment3.CommenterName}: {comment3.CommentText} (Length: {comment3.CommentLength} characters)");
-        Console.WriteLine($"{comment4.CommenterName}: {comment4.CommentText} (Length: {comment4.CommentLength} characters)");
+        foreach (var video in videos)
+        {
+            video.DisplayVideoInfo();
+        }
 
-        // Create a video
-        Video video3 = new Video("C# Tutorial", "VS Code Assistant", 600);
+        Video video3 = new Video(300, "How to Code in C#", "John Doe");
+        video3._comments.Add(new Comment("Alice", "Great tutorial!"));
+        video3._comments.Add(new Comment("Bob", "Very helpful, thanks!"));
+        video3._comments.Add(new Comment("Charlie", "I learned a lot from this video."));
 
-        // Create comments for the video
-        Comment comment5 = new Comment("Holt", "The VS Code Assistant really helps to cut down on entry time.");
-        Comment comment6 = new Comment("Toshio", "I have to admit the Assistance is a big help, but I cant help but feel like it takes away from the learning experience.");
+        videos.Add(video3);
 
-        // Display video information
-        Console.WriteLine($"Title: {video3.Title}");
-        Console.WriteLine($"Author: {video3.Author}");
-        Console.WriteLine($"Length: {video3.LengthInSeconds} seconds");
-
-        // Display comments
-        Console.WriteLine("\nComments:");
-        Console.WriteLine($"{comment5.CommenterName}: {comment5.CommentText} (Length: {comment5.CommentLength} characters)");
-        Console.WriteLine($"{comment6.CommenterName}: {comment6.CommentText} (Length: {comment6.CommentLength} characters)");
+        foreach (var video in videos)
+        {
+            video.DisplayVideoInfo();
+        }
     }
 }
