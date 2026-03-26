@@ -12,6 +12,6 @@ public class Comment
   }
   public void DisplayComment()
   {
-    Console.WriteLine($"{_commenterName}: {_commentText}");
+    Console.WriteLine($"{_commenterName}: {_commentText}");;
   }
 }
