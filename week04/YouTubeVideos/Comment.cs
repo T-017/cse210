@@ -1,5 +1,6 @@
 using System;
 
+
 public class Comment
 {
   public string _commenterName;
@@ -12,6 +13,6 @@ public class Comment
   }
   public void DisplayComment()
   {
-    Console.WriteLine($"{_commenterName}: {_commentText}");;
+    Console.WriteLine($"{_commenterName}: {_commentText}"); ;
   }
 }
