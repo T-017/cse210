@@ -13,7 +13,7 @@ class Program
         Console.WriteLine(a2.GetSummary());
         Console.WriteLine(a2.GetHomeworkList());
 
-        WritingAssignment a3 = new WritingAssignment("Sally Doe", "European History", "The Causes of World War II", "May 23, 2024");
+        WritingAssignment a3 = new WritingAssignment("Sally Doe", "European History", "The Causes of World War II");
         Console.WriteLine(a3.GetSummary());
         Console.WriteLine(a3.GetWritingInformation());
     }
