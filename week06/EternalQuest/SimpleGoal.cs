@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class SimpleGoal : Goal
 {
-  private bool _isComplete;
+  protected bool _isComplete;
 
   public SimpleGoal(string name, string description, int points) : base(name, description, points)
   {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public abstract class EternalGoal : Goal
+public class EternalGoal : Goal
 {
   public EternalGoal(string name, string description, int points) : base(name, description, points)
   {

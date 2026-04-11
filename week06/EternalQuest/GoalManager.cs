@@ -56,12 +56,25 @@ public class GoalManager
   public void DisplayUserInfo()
   {
     int level = 1 + (_score / 1000);
-    Console.WriteLine($"Level: {level}");
-    Console.WriteLine($"Experience: {_score}");
-    Console.WriteLine(new string('-', 50));
+    Console.WriteLine($"Level: {level} | Experience: {_score}");
+    Console.WriteLine(new string('=', 50));
   }
 
   public void ListGoals()
+  {
+    if (_goals.Count == 0)
+    {
+      Console.WriteLine("No goals available."); return;
+    }
+    Console.WriteLine("Goal Details:");
+    for (int i = 0; i < _goals.Count; i++)
+    {
+      Goal goal = _goals[i];
+      Console.WriteLine($"{i + 1}. {goal.GetDetailsString()}");
+    }
+  }
+
+public void ListGoalDetails()
   {
     if (_goals.Count == 0)
     {
@@ -128,13 +141,13 @@ public class GoalManager
       Console.WriteLine("No goals available to record an event for."); return;
     }
 
-    ListGoals();
+    ListGoalDetails();
 
     Console.Write("Select a goal to record an event for: ");
     if (int.TryParse(Console.ReadLine(), out int index) && index >= 1 && index <= _goals.Count)
     {
       Goal goal = _goals[index - 1];
-      int pointsEarned = goal.RecordEvent();
+      int pointsEarned = 0;
 
       if (pointsEarned > 0)
       {

@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-public abstract class ChecklistGoal : Goal
+public  class ChecklistGoal : Goal
 {
-  private int _amountCompleted;
-  private int _target;
-  private int _bonus;
+  protected int _amountCompleted;
+  protected int _target;
+  protected int _bonus;
 
   public ChecklistGoal(string name, string description, int points, int target, int bonus) : base(name, description, points)
   {
