@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 public  class ChecklistGoal : Goal
 {
-  protected int _amountCompleted;
-  protected int _target;
-  protected int _bonus;
+  private int _amountCompleted;
+  private int _target;
+  private int _bonus;
 
   public ChecklistGoal(string name, string description, int points, int target, int bonus) : base(name, description, points)
   {
