@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-abstract class Goal
+public abstract class Goal
 {
   protected string _shortName;
   protected string _description;
@@ -16,16 +16,6 @@ abstract class Goal
 
   public abstract void RecordEvent();
   public abstract bool IsComplete();
-  
-  public string GetDetailsString()
-  {
-    return $"{(IsComplete() ? "[X]" : "[ ]")} {_shortName} ({_points} points) - {_description}";
-  }
-  
+  public abstract string GetDetailsString();
   public abstract string GetStringRep();
-
-  public string GetShortName()
-  {
-    return _shortName;
-  }
 }
