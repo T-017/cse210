@@ -1,4 +1,4 @@
 0
-SimpleGoal|Finish goal assignment|Finish this assignment|100|False
 EternalGoal|Make enough money to survive|Make money|50
 ChecklistGoal|Graduate and find a job that pays enough to survive|Graduate and work|250|0|2|5000
+SimpleGoal|Finish goals assignment|Finish assignment|100|False
