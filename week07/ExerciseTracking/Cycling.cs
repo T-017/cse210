@@ -7,9 +7,15 @@ class Cycling : Activity
     _speedKph = speedKph;
   }
 
-  public override double GetDistance() => _speedKph * GetLength() / 60.0;
+  public override double GetDistance()
+  {
+    return _speedKph * GetLength() / 60.0;
+  }
 
-  public override double GetSpeed() => _speedKph;
+  public override double GetSpeed()
+  {
+    return _speedKph;
+  }
 
   public override double GetPace()
   {

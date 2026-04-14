@@ -7,7 +7,10 @@ class Swimming : Activity
     _laps = laps;
   }
 
-  public override double GetDistance() => _laps * 50.0 / 1000.0;
+  public override double GetDistance()
+  {
+    return _laps * 50.0 / 1000.0;
+  }
 
   public override double GetSpeed()
   {

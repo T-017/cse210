@@ -12,7 +12,10 @@ abstract class Activity
     _length = length;
   }
 
-  protected int GetLength() => _length;
+  protected int GetLength()
+  {
+    return _length;
+  }
 
   public abstract double GetDistance();
   public abstract double GetSpeed();
